@@ -76,7 +76,7 @@ app.use("/staff", staffRouter);
 app.use("/staff", appointmentRouter);
 
 // Kết nối đến MongoDB
-mongoose.connect("mongodb+srv://duyenduyen71003:3DknrguC4BXZWbm@barbershop.0cwws.mongodb.net/49Days_BarberShop")
+mongoose.connect("")
     .then(() => {
         console.log("Connected to DB!");
         app.listen(3000, function () {
