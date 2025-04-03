@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>49Days</title>
+    <link rel="icon" href="static/img/icons/favicon.png">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/themify-icons.css">
+</head>
+
+<body>
+    <!--::header part start::-->
+    <%- include('partical/header'); %>
+        <!--::header part end::-->
+
+        <!-- breadcrumb start-->
+        <section class="breadcrumb breadcrumb_bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="breadcrumb_iner text-center">
+                            <div class="breadcrumb_iner_item">
+                                <h2>Dịch vụ</h2>
+                                <p>Trang Chủ <span class="ti-angle-double-right"></span> Dịch vụ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- breadcrumb end-->
+
+        <!-- Service part start-->
+        <section class="service_part section_padding">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7 col-lg-6 col-sm-10">
+                        <div class="section_tittle">
+                            <img src="static/img/icons/section_tittle_icon.png" alt="icon">
+                            <h2>Chi Tiết Dịch Vụ</h2>
+                            <p>Kiến tạo dịch vụ đỉnh cao, mang đến trải nghiệm tuyệt vời nhất cho khách hàng tại đây.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <% if(services.length > 0) { %>
+                        <% 
+                        let ratings = [5, 4.5, 4]; // Mảng chứa các đánh giá
+                        services.forEach(function(service, index) { 
+                            let rating = ratings[index % ratings.length]; // Lấy đánh giá theo thứ tự
+                        %>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="single_service_part" style="height: 600px; width: 350px;">
+                                    <img src="<%= service.imageUrl %>" alt="<%= service.name %>"
+                                        style="padding: 0px; margin-bottom: 0; width: 476px; height: 300px; object-fit: cover;">
+                                    <div class="single_service_text" style="padding: 15px;">
+                                        <h4 style="padding: 0px; margin-bottom: 10px;">
+                                            <%= service.name %>
+                                        </h4>
+                                        <p style="padding: 0px; margin-bottom: 10px;">
+                                            <%= service.description %>
+                                        </p>
+                                        <p style="padding: 0px; margin-bottom: 10px;">
+                                            <strong>Thời gian:</strong> <%= service.duration %> phút
+                                        </p>
+                                        <!-- Hiển thị đánh giá -->
+                                        <div class="rating" style="font-size: 20px; color: gold;margin-bottom: 10px;">
+                                            <% for(let i = 1; i <= 5; i++) { %>
+                                                <% if(i <= rating) { %>
+                                                    <span style="width: 20px;">★</span>
+                                                <% } else if(i - 0.5 === rating) { %>
+                                                    <span style="width: 20px;">☆</span>
+                                                <% } else { %>
+                                                    <span style="width: 20px; opacity: 0.5;">☆</span>
+                                                <% } %>
+                                            <% } %>
+                                        </div>
+                                        <a href="/detailservice" class="btn_3" style="margin-top: auto;">Tìm hiểu thêm</a>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }) %>
+                    <% } else { %>
+                        <div class="col-12 text-center">
+                            <h4>Hiện tại chưa có dịch vụ nào.</h4>
+                        </div>
+                    <% } %>
+                </div>  
+            </div>
+        </section>
+        <!-- Service part end-->
+
+        <!--::review_part start::-->
+        <section class="review_part gray_bg section_padding">
+        </section>
+        <!--::footer part start::-->
+        <%- include('partical/footer'); %>
+            <!--::footer part end::-->
+
+            <!-- jquery plugins here-->
+            <script src="public/js/jquery-1.12.1.min.js"></script>
+            <script src="public/js/bootstrap.min.js"></script>
+            <script src="public/js/custom.js"></script>
+</body>
+
+</html>
