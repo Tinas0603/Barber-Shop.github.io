@@ -76,13 +76,15 @@ app.use("/staff", staffRouter);
 app.use("/staff", appointmentRouter);
 
 // Kết nối đến MongoDB
-mongoose.connect("mongodb+srv://duyenduyen71003:3DknrguC4BXZWbm@barbershop.0cwws.mongodb.net/49Days_BarberShop")
+require('dotenv').config();
+mongoose.connect(process.env.MONGODB_URI)
 
 
     .then(() => {
         console.log("Connected to DB!");
-        app.listen(3000, function () {
-            console.log("Server is running on port 3000");
+        const port = process.env.PORT || 3000;
+        app.listen(port, function () {
+            console.log(`Server is running on port ${port}`);
         });
     })
     .catch((error) => {
