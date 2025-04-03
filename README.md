@@ -6,7 +6,7 @@
 - **2180608087** : Trần Trọng Tuấn
 ## 📖 Mô tả dự án
 
-Dự án **Ecommerce Website** này được xây dựng bằng **JavaScript**, mô phỏng một cửa hàng bán các dịch vụ cắt tóc và chăm sóc tóc trực tuyến. Dự án cung cấp các tính năng cơ bản của một website thương mại điện tử, bao gồm quản lý dịch vụ, giỏ hàng, đăng nhập/đăng ký người dùng, và đặt lịch hẹn. Mục tiêu của dự án là học hỏi và áp dụng các công nghệ JavaScript hiện đại trong phát triển web.
+Dự án **Booking Website** này được xây dựng bằng **JavaScript**, mô phỏng một cửa hàng bán các dịch vụ cắt tóc và chăm sóc tóc trực tuyến. Dự án cung cấp các tính năng cơ bản của một website đặt lịch, bao gồm quản lý dịch vụ, đăng nhập/đăng ký người dùng, và đặt lịch hẹn. Mục tiêu của dự án là học hỏi và áp dụng các công nghệ JavaScript hiện đại trong phát triển web.
 
 Dự án được thiết kế với kiến trúc **MVC (Model-View-Controller)**, sử dụng các thư viện JavaScript hiện đại để quản lý các thành phần. Giao diện người dùng được xây dựng với **Bootstrap** và **JSP**, đảm bảo tính responsive và thân thiện với người dùng.
 
@@ -17,18 +17,12 @@ Dự án được thiết kế với kiến trúc **MVC (Model-View-Controller)*
 - **Dịch vụ**:
   - Xem danh sách dịch vụ.
   - Xem chi tiết dịch vụ.
-- **Giỏ hàng**:
-  - Thêm dịch vụ vào giỏ hàng.
-  - Xem và chỉnh sửa giỏ hàng (thêm/giảm số lượng, xóa dịch vụ).
-  - Đặt lịch hẹn và nhận thông báo cảm ơn.
-  - Xem lịch sử đặt lịch hẹn.
+- **Đặt lịch**:
+  - Đặt lịch hẹn.
+  - Xem và chỉnh sửa lịch đặt (hủy lịch đặt).
 - **Người dùng**:
   - Đăng ký tài khoản.
-  - Đăng nhập/đăng xuất (tích hợp bảo mật và xác thực).
-  - Hỗ trợ tính năng "Remember Me" để tự động đăng nhập.
-- **Bảo mật**:
-  - Xác thực người dùng với JWT hoặc OAuth.
-  - Bảo vệ form đăng nhập và các hành động bằng CSRF token.
+  - Đăng nhập/đăng xuất.
 - **Giao diện**:
   - Responsive design với Bootstrap 5.
   - Hỗ trợ các hiệu ứng như spinner, carousel, và lightbox.
@@ -62,4 +56,6 @@ Dự án sử dụng các công nghệ và công cụ sau:
   - **NPM**: Quản lý các package và thư viện JavaScript.
   
 ---
+
+## ⏳ Dự án vẫn còn trong giai đoạn phát triển, nhiều tính năng vẫn chưa hoàn thiện.
 
