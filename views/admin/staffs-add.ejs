@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>49Days - Quản lý nhân viên</title>
+  <link rel="icon" href="/static/img/favicon.png">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/admin/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/admin/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/admin/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="/static/admin/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="/static/admin/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/static/admin/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/static/admin/css/style.css" rel="stylesheet">
+
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #9b59b6;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+<%- include('partials/header'); %>
+<%- include('partials/sidebar'); %>
+
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Thêm Nhân Viên</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/admin">Trang chủ</a></li>
+                <li class="breadcrumb-item active">Thêm nhân viên</li>
+            </ol>
+        </nav>
+    </div>
+
+    <section class="section">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Nhập thông tin nhân viên</h5>
+
+                <form action="/admin/staffs/data" method="POST">
+                    <div class="mb-3">
+                        <label for="userId" class="form-label">Chọn người dùng</label>
+                        <select class="form-control" id="userId" name="userId" required>
+                            <% users.forEach(user => { %>
+                                <option value="<%= user._id %>"><%= user.fullname %></option>
+                            <% }); %>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="experience" class="form-label">Kinh nghiệm (Năm)</label>
+                        <input type="number" class="form-control" id="experience" name="experience" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="service" class="form-label">Chọn dịch vụ</label>
+                        <select class="form-control" id="service" name="service" required>
+                            <% services.forEach(service => { %>
+                                <option value="<%= service._id %>"><%= service.name %></option>
+                            <% }); %>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="imageUrl" class="form-label">URL Ảnh</label>
+                        <input type="text" class="form-control" id="imageUrl" name="imageUrl" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Thêm nhân viên</button>
+                    <a href="/admin/staffs" class="btn btn-secondary">Hủy</a>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src="/static/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
